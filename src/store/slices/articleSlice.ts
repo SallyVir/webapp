@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { Article } from '../types/article.ts';
-import type {Category} from "../types/category.ts";
+import type { Article } from '../../types/article.ts';
+import type {Category} from "../../types/category.ts";
 
 interface ArticleState {
     categories: Category[];

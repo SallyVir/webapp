@@ -1,33 +1,33 @@
 Nhóm components/articles/ — các components cho articles
 
-| File           | Ý nghĩa                            |
-| -------------- |------------------------------------|
-| ArticleCard.tsx     | ô article cơ bản                   |                               
-| ArticleList.tsx    | danh sách article                  |
-| CompactArticleList.tsx  | danh sách article gom cụm          |
-| FeaturedArticleList.tsx    | danh sách article theo hướng ngang |
-| MainArticleCard.tsx    | ô article lớn nhất                 |
-| SubArticleCard.tsx   | các ô article bé hơn               |
+| File           | Ý nghĩa                                                                               |
+| -------------- |---------------------------------------------------------------------------------------|
+| ArticleCard.tsx     | ô article cơ bản                                                                      |                               
+| ArticleList.tsx    | danh sách article                                                                     |
+| CompactArticleList.tsx  | danh sách article gom cụm                                                             |
+| FeaturedArticleList.tsx    | danh sách article theo hướng ngang là 1 cái to( MainArticleCard) + CompactArticleList |
+| MainArticleCard.tsx    | ô article lớn nhất                                                                    |
+| SubArticleCard.tsx   | các ô article bé hơn                                                                  |
 
 # ArticleCard
-![img_6.png](src/assets/img_6.png)
+![img.png](src/assets/img.png)
 
 # ArticleList
-![img_5.png](src/assets/img_5.png)
+![img_1.png](src/assets/img_1.png)
 
 # CompactArticleList
-![img_4.png](src/assets/img_4.png)
+![img_2.png](src/assets/img_2.png)
 
 # FeaturedArticleList
 ![img_3.png](src/assets/img_3.png)
 
 # MainArticleCard
-![img.png](src/assets/img.png)
+![img_4.png](src/assets/img_4.png)
 
 # SubArticleCard
-![img_1.png](src/assets/img_1.png)
+![img_5.png](src/assets/img_5.png)
 hoặc
-![img_2.png](src/assets/img_2.png)
+![img_6.png](src/assets/img_6.png)
 
 Nhóm components/comments/ — các components cho comments
 
@@ -46,10 +46,10 @@ Nhóm components/common/ — các thứ linh tinh để dùng cho các thức kh
 | Input.tsx  | khung input          |
 
 # Button.tsx
-![img_9.png](src/assets/img_9.png)
+![img_8.png](src/assets/img_8.png)
 
 # Input.tsx
-![img_10.png](src/assets/img_10.png)
+![img_9.png](src/assets/img_9.png)
 
 Nhóm components/layout/ — chứa header và footer
 
@@ -59,10 +59,10 @@ Nhóm components/layout/ — chứa header và footer
 | Footer.tsx | Cuối trang |
 
 # Header.tsx
-![img_11.png](src/assets/img_11.png)
+![img_10.png](src/assets/img_10.png)
 
 # Footer.tsx
-![img_12.png](src/assets/img_12.png)
+![img_11.png](src/assets/img_11.png)
 
 # assets : nơi chứa ảnh, vid,... và bây giờ css nằm ở trong đó luôn
 # layout: mainlayout là layout tổng sử dụng cho mọi trang

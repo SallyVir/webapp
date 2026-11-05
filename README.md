@@ -1,69 +1,71 @@
-Nhóm components/layout/ — khung trang
+Nhóm components/articles/ — các components cho articles
 
-| File           | Ý nghĩa        | Tác dụng                                                                          |
-| -------------- | -------------- |-----------------------------------------------------------------------------------|
-| Header.tsx     | Đầu trang      | Chứa logo, thanh tìm kiếm và MainNav.                                             |
-| MainNav.tsx    | Menu chính     | Hiển thị các chuyên mục cấp 1: Xã hội, Kinh tế, Thế giới, Thể thao, Văn hoá…      |
-| MegaMenu.tsx   | Menu nhiều cấp | Khi hover “Kinh tế”, hiện Thị trường, Doanh nghiệp, Đầu tư, Tài chính – Chứng khoán. |
-| Footer.tsx     | Chân trang     | Chứa giới thiệu, liên kết chuyên mục, thông tin bản quyền và nguồn dữ liệu RSS.   |
-| ContentContainer.tsx    | Khung của 1 trang | Đọc dọc từ trên xuống dưới và sắp xếp các component |
-| SearchBox.tsx    | Ô tìm kiếm        | Nhập từ khoá và chuyển sang /tim-kiem?q=....        |
+| File           | Ý nghĩa                            |
+| -------------- |------------------------------------|
+| ArticleCard.tsx     | ô article cơ bản                   |                               
+| ArticleList.tsx    | danh sách article                  |
+| CompactArticleList.tsx  | danh sách article gom cụm          |
+| FeaturedArticleList.tsx    | danh sách article theo hướng ngang |
+| MainArticleCard.tsx    | ô article lớn nhất                 |
+| SubArticleCard.tsx   | các ô article bé hơn               |
 
-# Header
-![img.png](src/assets/img.png)
-
-# MainNav & MegaMenu
-![img_1.png](src/assets/img_1.png)
-
-# Footer
-![img_2.png](src/assets/img_2.png)
-
-Nhóm components/article/ — hiển thị bài viết
-
-| File                | Ý nghĩa                | Tác dụng                                                                          |
-| ------------------- |------------------------|-----------------------------------------------------------------------------------|
-| CompactArticleList.tsx     | Thẻ một bài viết       | Hiển thị ảnh, tiêu đề, dùng ở mọi trang.                                          |
-| FeaturedArticleList.tsx | Bài tiêu biểu          | Bài có ảnh lớn, tiêu đề nổi bật; có nội dung tóm tắt.                             |
-| ArticleList.tsx | Bài dành cho danh sách | Bài có ảnh, tiêu đề nổi bật; có nội dung tóm tắt nhưng ảnh bên trái chữ bên phải. |
-
-# CompactArticleList
-![img_3.png](src/assets/img_3.png)
-
-# FeaturedArticleList
-![img_4.png](src/assets/img_4.png)
+# ArticleCard
+![img_6.png](img_6.png)
 
 # ArticleList
-![img_5.png](src/assets/img_5.png)
+![img_5.png](img_5.png)
 
-Nhóm components/category/ — chuyên mục
+# CompactArticleList
+![img_4.png](img_4.png)
 
-| File               | Ý nghĩa                   | Tác dụng                                                                  |
-| ------------------ | ------------------------- | ------------------------------------------------------------------------- |
-| CategoryHeader.tsx | Đầu trang chuyên mục      | Hiện tên chuyên mục, mô tả ngắn và ảnh nền nếu có.                        |
-| CategoryTabs.tsx   | Tab chuyển nhanh          | Ví dụ trong “Sức khỏe”: Y khoa, Thuốc tốt, Khỏe đẹp, Giới tính, Mẹ và bé. |
+# FeaturedArticleList
+![img_3.png](img_3.png)
 
-# CategoryHeader & CategoryTabs
-![img_6.png](src/assets/img_6.png)
+# MainArticleCard
+![img.png](img.png)
 
-Nhóm components/section/ — các khối chứa tin tức
+# SubArticleCard
+![img_1.png](img_1.png)
+hoặc
+![img_2.png](img_2.png)
 
-| File                  | Ý nghĩa                                  | Tác dụng                                                                        |
-| --------------------- |------------------------------------------|---------------------------------------------------------------------------------|
-| FeaturedSection.tsx       | Khu vực tin nổi bật                      | Kết hợp 1 bài lớn và 3–5 bài phụ.                                 |
-| CategorySection.tsx | Khối chuyên mục                          | Mỗi khối lấy 4–6 bài từ một chuyên mục, ví dụ “Kinh tế”, “Thể thao”, “Giải trí”. |
-| ArticleGrid.tsx     | Danh sách bài sắp xếp theo cấu trúc bảng | Bảng có thể 1 cột nhiều cột, 1 hàng hay nhiều hàng                              |
+Nhóm components/comments/ — các components cho comments
 
-# FeaturedSection
-![img_7.png](src/assets/img_7.png)
+| File                | Ý nghĩa               |
+| ------------------- |-----------------------|
+| CommentItem.tsx    | 1 thẻ comment         |
+| CommentSection.tsx | danh sách các comment |
 
-# CategorySection
-![img_8.png](src/assets/img_8.png)
+![img_7.png](img_7.png)
 
-# ArticleGrid
-![img_9.png](src/assets/img_9.png)
+Nhóm components/common/ — các thứ linh tinh để dùng cho các thức khác
 
-# assets : nơi chứa ảnh, vid,...
-# style: nơi chứa file css ( chỉ dùng duy nhất 1 file global chung cho toàn bộ)
-# lib: nơi chứa thư viện rss (đề sau chưa tính tới)
-# app : nơi định nghĩa các trang và đường dẫn URL 
-# pages: nơi chứa 4 trang hoàn chỉnh
+| File               | Ý nghĩa              |
+| ------------------ |----------------------|
+| Button.tsx | Nút để sài nhiều nơi |
+| Input.tsx  | khung input          |
+
+# Button.tsx
+![img_9.png](img_9.png)
+
+# Input.tsx
+![img_10.png](img_10.png)
+
+Nhóm components/layout/ — chứa header và footer
+
+| File                  | Ý nghĩa    |
+| --------------------- |------------|
+| Header.tsx      | Đầu trang  |
+| Footer.tsx | Cuối trang |
+
+# Header.tsx
+![img_11.png](img_11.png)
+
+# Footer.tsx
+![img_12.png](img_12.png)
+
+# assets : nơi chứa ảnh, vid,... và bây giờ css nằm ở trong đó luôn
+# layout: mainlayout là layout tổng sử dụng cho mọi trang
+# pages: Chứa từng page và các component riêng cho page(các component này dành riêng cho page này)
+# routes: nơi chứa đường dẫn
+# utils: nơi chứa các hàm chuyển đổi linh tinh

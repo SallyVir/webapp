@@ -4,16 +4,10 @@
 // import viteLogo from './assets/vite.svg'
 import './App.css'
 
-import Test from './test';
-
 function App() {
-    return (
-        <div>
-            <h1>Trang chính của ứng dụng React</h1>
-            {/* Gọi component Test ở đây */}
-            <Test />
-        </div>
-    );
+    // return (
+    //
+    // );
 }
 
 export default App;

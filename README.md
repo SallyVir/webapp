@@ -22,17 +22,17 @@ Nhóm components/article/ — hiển thị bài viết
 
 | File                | Ý nghĩa                | Tác dụng                                                                          |
 | ------------------- |------------------------|-----------------------------------------------------------------------------------|
-| CompactArticle.tsx     | Thẻ một bài viết       | Hiển thị ảnh, tiêu đề, dùng ở mọi trang.                                          |
-| FeaturedArticle.tsx | Bài tiêu biểu          | Bài có ảnh lớn, tiêu đề nổi bật; có nội dung tóm tắt.                             |
-| ArticleListItem.tsx | Bài dành cho danh sách | Bài có ảnh, tiêu đề nổi bật; có nội dung tóm tắt nhưng ảnh bên trái chữ bên phải. |
+| CompactArticleList.tsx     | Thẻ một bài viết       | Hiển thị ảnh, tiêu đề, dùng ở mọi trang.                                          |
+| FeaturedArticleList.tsx | Bài tiêu biểu          | Bài có ảnh lớn, tiêu đề nổi bật; có nội dung tóm tắt.                             |
+| ArticleList.tsx | Bài dành cho danh sách | Bài có ảnh, tiêu đề nổi bật; có nội dung tóm tắt nhưng ảnh bên trái chữ bên phải. |
 
-# CompactArticle
+# CompactArticleList
 ![img_3.png](src/assets/img_3.png)
 
-# FeaturedArticle
+# FeaturedArticleList
 ![img_4.png](src/assets/img_4.png)
 
-# ArticleListItem
+# ArticleList
 ![img_5.png](src/assets/img_5.png)
 
 Nhóm components/category/ — chuyên mục

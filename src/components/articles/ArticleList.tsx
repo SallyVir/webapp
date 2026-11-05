@@ -5,7 +5,7 @@ interface Props {
     article: Article;
 }
 
-export const ArticleListItem: React.FC<Props> = ({ article }) => {
+export const ArticleList: React.FC<Props> = ({ article }) => {
     return (
         <article className="article-list-item">
             <a href={article.link.href} className="item-container">

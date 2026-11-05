@@ -1,5 +1,6 @@
 
 export interface Channel {
+    id: number;
     title: string;
     copyright: string;
     link: URL;
@@ -11,51 +12,53 @@ export interface Channel {
     managingEditor: string;
     webMaster: string;
     ttl: number;
-    image: ChannelImage;
+    image_url: URL;
+    image_title: string;
+    image_link: URL;
 }
 
-export interface ChannelImage {
-    url: URL;
-    title: string;
-    link: URL;
-}
-
-export function createChannel(
-    title: string,
-    copyright: string,
-    link: string,
-    lastBuildDate: string,
-    pubDate: string,
-    description: string,
-    language: string,
-    docs: string,
-    managingEditor: string,
-    webMaster: string,
-    ttl: number,
-    image: ChannelImage): Channel {
-    return {
-        title: title.trim(),
-        copyright: copyright.trim(),
-        link: new URL(link),
-        lastBuildDate: new Date(lastBuildDate),
-        pubDate: new Date(pubDate),
-        description: description.trim(),
-        language: language.trim(),
-        docs: new URL(docs),
-        managingEditor: managingEditor.trim(),
-        webMaster: webMaster.trim(),
-        ttl: ttl,
-        image: image
-    };
-}
-
-export function createChannelImage(
-    url: string,
-    title: string,
-    link: string): ChannelImage {
-    return {
-        url: new URL(url),
-        title: title.trim(),
-        link: new URL(link)
-    };
-}
+// export interface ChannelImage {
+//     url: URL;
+//     title: string;
+//     link: URL;
+// }
+//
+// export function createChannel(
+//     title: string,
+//     copyright: string,
+//     link: string,
+//     lastBuildDate: string,
+//     pubDate: string,
+//     description: string,
+//     language: string,
+//     docs: string,
+//     managingEditor: string,
+//     webMaster: string,
+//     ttl: number,
+//     image: ChannelImage): Channel {
+//     return {
+//         title: title.trim(),
+//         copyright: copyright.trim(),
+//         link: new URL(link),
+//         lastBuildDate: new Date(lastBuildDate),
+//         pubDate: new Date(pubDate),
+//         description: description.trim(),
+//         language: language.trim(),
+//         docs: new URL(docs),
+//         managingEditor: managingEditor.trim(),
+//         webMaster: webMaster.trim(),
+//         ttl: ttl,
+//         image: image
+//     };
+// }
+//
+// export function createChannelImage(
+//     url: string,
+//     title: string,
+//     link: string): ChannelImage {
+//     return {
+//         url: new URL(url),
+//         title: title.trim(),
+//         link: new URL(link)
+//     };
+// }

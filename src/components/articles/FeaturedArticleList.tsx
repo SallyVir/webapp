@@ -1,20 +1,19 @@
-import React from 'react';
-import type {Article} from '../../types/article';
+import type { Article } from '../../types/article';
+import MainArticleCard from './MainArticleCard';
+import CompactArticleList from './CompactArticleList';
 
-interface Props {
-    article: Article;
-}
+export default function FeaturedArticleList({ articles }: { articles: Article[] }) {
+    const mainArticle = articles[0];
+    const sideArticles = articles.slice(1, 5);
 
-export const FeaturedArticleList: React.FC<Props> = ({ article }) => {
     return (
-        <article className="featured-article">
-            <a href={article.link.href}>
-                <div className="img-wrapper">
-                    <img src={article.image.href} alt={article.title} />
-                </div>
-                <h2 className="title">{article.title}</h2>
-                {article.description && <p className="summary">{article.description}</p>}
-            </a>
-        </article>
+        <div className="row g-4">
+            <div className="col-12 col-lg-8">
+                {mainArticle && <MainArticleCard article={mainArticle} />}
+            </div>
+            <div className="col-12 col-lg-4">
+                <CompactArticleList articles={sideArticles} />
+            </div>
+        </div>
     );
-};
+}

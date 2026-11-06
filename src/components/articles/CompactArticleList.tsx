@@ -1,17 +1,10 @@
-import React from 'react';
-import type {Article} from '../../types/article';
+import type { Article } from '../../types/article';
+import SubArticleCard from './SubArticleCard';
 
-interface Props {
-    article: Article;
-}
-
-export const CompactArticleList: React.FC<Props> = ({ article }) => {
+export default function CompactArticleList({ articles }: { articles: Article[] }) {
     return (
-        <article className="compact-article">
-            <a href={article.link.href}>
-                <img src={article.thumb.href} alt={article.title} className="thumb" />
-                <h3 className="title">{article.title}</h3>
-            </a>
-        </article>
+        <div className="compact-article-list">
+            {articles.map((article: Article) => (<SubArticleCard article={article} />))}
+        </div>
     );
-};
+}

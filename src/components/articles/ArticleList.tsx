@@ -1,21 +1,10 @@
-import React from 'react';
-import type {Article} from '../../types/article';
+import type { Article } from '../../types/article';
+import ArticleCard from './ArticleCard';
 
-interface Props {
-    article: Article;
-}
-
-export const ArticleList: React.FC<Props> = ({ article }) => {
+export default function ArticleList({ articles }: { articles: Article[] }) {
     return (
-        <article className="article-list-item">
-            <a href={article.link.href} className="item-container">
-                <img src={article.thumb.href} alt={article.title} className="thumb" />
-                <div className="content">
-                    <h3 className="title">{article.title}</h3>
-                    {article.description && <p className="summary">{article.description}</p>}
-                    <span className="time">{article.pubDate.toLocaleDateString('vi-VN')}</span>
-                </div>
-            </a>
-        </article>
+        <div className="row g-4">
+            {articles.map((article: Article) => (<ArticleCard article={article} />))}
+        </div>
     );
-};
+}

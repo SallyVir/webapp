@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #ed1c24;
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --border-color: #666666;
+    --font-family: Arial;
+    --font-size: 15px;
+}
+
+body {
+    font-family: var(--font-family), sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.header {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+}
+
+.header .header-top {
+    padding : 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 300px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.header .header-actions {
+    position: absolute;
+    top: 80%;
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+.header .header-action {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/*phần này là về chôx tìm kiếm và avatar người dùng*/
+/*chịu tại cái avatar tùy thuộc và người dùng đăng nhập nữa nên để sau*/
+
+
+.header .navbar {
+    width: 100%;
+    height: 120px;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .nav-menu-list {
+    width: max-content;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 50px);
+    grid-auto-columns: 115px;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .nav-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .nav-link {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    line-height: 1.0;
+    color: var(--text-color);
+    font-family: var(--font-family), serif;
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+
+.header .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.header .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 190px;
+    padding: 8px 0;
+    background: var(--background-color);
+    border: 1px solid var(--text-color);
+    box-shadow: var(--border-color);
+}
+
+.header .nav-item:hover > .dropdown-menu {
+    display: block;
+}
+
+.header .dropdown-menu .nav-item {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header .dropdown-menu .nav-link {
+    justify-content: center;
+    padding: 10px 15px;
+    font-size: var(--font-size);
+}
+
+.footer {
+    width: 100%;
+    margin-top: 40px;
+    background-color: var(--background-color);
+    border-top: 2px solid var(--border-color);
+}
+
+
+.footer .footer-top {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .logo img {
+    width: 300px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+
+.footer .navbar {
+    padding: 30px 20px;
+}
+
+
+.footer .nav-menu-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 25px;
+    list-style: none;
+}
+
+
+.footer .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer .parent-nav-link {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.footer .parent-nav-link:hover {
+    color: var(--primary-color);
+}
+
+.footer .child-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.footer .child-list .nav-item {
+    display: block;
+}
+
+
+.footer .child-list .nav-link {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer .child-list .nav-link:hover {
+    color: var(--primary-color);
+}
+

@@ -1,5 +1,6 @@
 export interface Channel {
     id: number;
+    category_id: number;
     title: string;
     copyright: string;
     link: string;

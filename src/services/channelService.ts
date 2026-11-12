@@ -7,8 +7,8 @@ export const channelService = {
         return response.data.channels;
     },
 
-    async getChannelById(id: number): Promise<Channel> {
-        const response = await axiosClient.get(`/api/channels/${id}`);
+    async getChannelById(channel_id: number): Promise<Channel> {
+        const response = await axiosClient.get(`/api/channels/${channel_id}`);
         return response.data.channel;
     },
 };

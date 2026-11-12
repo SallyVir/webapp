@@ -1,20 +1,15 @@
 import axiosClient from "./axiosClient.ts";
 import type {Article} from "../types/article.ts";
-import type {Category} from "../types/category.ts";
 
 export const articleService = {
-    async getAllArticles() :Promise<Category[]>{
-        const response = await axiosClient.get('/api/categories');
-        return response.data.categories;
-    },
 
-    async getArticleByCategory(categoryName: string): Promise<Article[]> {
-        const response = await axiosClient.get(`/api/categories/${encodeURIComponent(categoryName)}/articles`);
+    async getArticlesByCategory(category_id: number): Promise<Article[]> {
+        const response = await axiosClient.get(`/api/categories/${category_id}/articles`);
         return response.data.articles;
     },
 
-    async getArticlesDetail(articleId: number): Promise<Article>{
-        const response = await axiosClient.get(`/api/articles/${articleId}`);
+    async getArticlesDetail(article_id: number): Promise<Article>{
+        const response = await axiosClient.get(`/api/articles/${article_id}`);
         return response.data.articles;
     },
 

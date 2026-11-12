@@ -10,4 +10,9 @@ export const systemService = {
         const response = await axiosClient.post('/api/sync-rss');
         return response.data;
     },
+
+    async syncRssArticles() {
+        const response = await axiosClient.post('/api/sync-rss-articles');
+        return response.data;
+    }
 };

@@ -1,9 +1,7 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { Article } from '../../types/article.ts';
-import type {Category} from "../../types/category.ts";
+import {createSlice, type PayloadAction} from '@reduxjs/toolkit';
+import type {Article} from '../../types/article.ts';
 
 interface ArticleState {
-    categories: Category[];
     articles: Article[];
     currentArticle: Article | null;
     loading: boolean;
@@ -11,7 +9,6 @@ interface ArticleState {
 }
 
 const initialState: ArticleState = {
-    categories: [],
     articles: [],
     currentArticle: null,
     loading: false,
@@ -22,9 +19,6 @@ export const articleSlice = createSlice({
     name: "article",
     initialState,
     reducers: {
-        setCategories: (state: ArticleState, action: PayloadAction<Category[]>) => {
-            state.categories = action.payload;
-        },
         setArticles: (state: ArticleState, action: PayloadAction<Article[]>) => {
             state.articles = action.payload;
         },
@@ -40,5 +34,5 @@ export const articleSlice = createSlice({
     },
 });
 
-export const { setCategories, setArticles, setCurrentArticle, setLoading, setError } = articleSlice.actions;
+export const {setArticles, setCurrentArticle, setLoading, setError} = articleSlice.actions;
 export default articleSlice.reducer;

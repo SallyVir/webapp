@@ -7,44 +7,50 @@ import SearchPage from '../pages/Search/SearchPage';
 import LoginPage from '../pages/Auth/LoginPage';
 import RegisterPage from '../pages/Auth/RegisterPage';
 import AccountPage from '../pages/Account/AccountPage';
+import MainLayout from "../layouts/MainLayout.tsx";
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <HomePage />,
-    },
-    {
-        path: "/articles/:id",
-        element: <ArticleDetailPage />,
-    },
-    {
-        path: "/categories/:categoryName",
-        element: <CategoryPage />,
-    },
-    {
-        path: "/search",
-        element: <SearchPage />,
-    },
-    {
-        path: "/login",
-        element: <LoginPage />,
-    },
-    {
-        path: "/register",
-        element: <RegisterPage />,
-    },
-    {
-        path: "/account",
-        element: <AccountPage />,
-    },
-    {
-        path: "*",
-        element: (
-            <div>
-                <h2>Không tìm thấy trang yêu cầu</h2>
-            </div>
-        ),
-    },
+        element: <MainLayout/>,
+        children: [
+            {
+                path: "/",
+                element: <HomePage/>,
+            },
+            {
+                path: "/articles/:id",
+                element: <ArticleDetailPage/>,
+            },
+            {
+                path: "/categories/:categoryName",
+                element: <CategoryPage/>,
+            },
+            {
+                path: "/search",
+                element: <SearchPage/>,
+            },
+            {
+                path: "/login",
+                element: <LoginPage/>,
+            },
+            {
+                path: "/register",
+                element: <RegisterPage/>,
+            },
+            {
+                path: "/account",
+                element: <AccountPage/>,
+            },
+            {
+                path: "*",
+                element: (
+                    <div>
+                        <h2>Không tìm thấy trang yêu cầu</h2>
+                    </div>
+                ),
+            },
+        ]
+    }
 ]);
 
 export default function AppRoutes() {

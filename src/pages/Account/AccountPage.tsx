@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { User } from '../../types/user';
+import type { Comment } from '../../types/comment';
 import { userService } from '../../services/userService';
+import { commentService } from '../../services/commentService';
 import AccountSidebar from './components/AccountSidebar';
 import ProfileInfoSection from './components/ProfileInfoSection';
 
@@ -23,6 +25,15 @@ export default function AccountPage() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [pwdMsg, setPwdMsg] = useState('');
+    const [userComments, setUserComments] = useState<Comment[]>([]);
+
+    useEffect(() => {
+        if (activeTab === 'commented') {
+            commentService.getCommentsByUser(Number(user.id))
+                .then((list) => setUserComments(Array.isArray(list) ? list : []))
+                .catch(() => setUserComments([]));
+        }
+    }, [activeTab, user.id]);
 
     const handleChangeInfo = async (newName: string, newAvatar: string) => {
         try {
@@ -43,7 +54,6 @@ export default function AccountPage() {
         try {
             await userService.changePassword(Number(user.id), newPassword);
         } catch {
-
         }
         setNewPassword('');
         setConfirmPassword('');
@@ -55,7 +65,6 @@ export default function AccountPage() {
         try {
             await userService.logout(user.name);
         } catch {
-
         }
         localStorage.removeItem('user');
         window.location.href = '/';
@@ -95,7 +104,32 @@ export default function AccountPage() {
                         {activeTab === 'commented' && (
                             <>
                                 <h4 className="text-uppercase fw-normal text-dark mb-4">TIN ĐÃ BÌNH LUẬN</h4>
-                                <p className="text-muted">Chưa có bình luận nào.</p>
+                                {userComments.length === 0 ? (
+                                    <p className="text-muted">Chưa có bình luận nào.</p>
+                                ) : (
+                                    <div className="d-flex flex-column gap-3">
+                                        {userComments.map((c) => (
+                                            <div key={c.id} className="border-bottom pb-3">
+                                                <p className="mb-1 text-dark">{c.content}</p>
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <small className="text-muted">
+                                                        {c.comment_time ? new Date(c.comment_time).toLocaleString('vi-VN') : ''}
+                                                    </small>
+                                                    {c.article_link && (
+                                                        <a
+                                                            href={c.article_link}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="text-danger text-decoration-none small fw-semibold"
+                                                        >
+                                                            Xem bài viết →
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </>
                         )}
 

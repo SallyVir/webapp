@@ -220,3 +220,43 @@ body {
     color: var(--primary-color);
 }
 
+.article-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.article-body .article-sapo {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.article-body .article-figure {
+    margin: 16px 0;
+    text-align: center;
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 16px auto;
+}
+
+.article-body figcaption,
+.article-body .article-content em {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--border-color);
+}
+
+.article-body a {
+    color: var(--primary-color);
+}
+
+.article-body .article-source {
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--border-color);
+}

@@ -1,13 +1,43 @@
-// import { useEffect, useState } from 'react';
-// import type { Article } from '../../types/article';
-// import FeaturedArticleList from '../../components/articles/FeaturedArticleList';
-// import ArticleList from '../../components/articles/ArticleList';
-// import { articleService } from '../../services/articleService';
+import FeaturedArticleList from '../../components/articles/FeaturedArticleList';
+import ArticleList from '../../components/articles/ArticleList';
+import {useAppSelector} from "../../store/hooks.ts";
 
 export default function HomePage() {
+    const articles = useAppSelector((state: any) => state.article.articles);
+    const featuredArticleList = articles.slice(0,5);
+    const articleList = articles.slice(5);
+
+    const currentCategory = useAppSelector((state: any) => state.category.currentCategory);
+    const currentChannel = useAppSelector((state: any) => state.channel.currentChannel);
+
+    return(
+        <div className="container">
+            <div className="section-top">
+                <h1 className="title">
+                    {currentCategory.categoryName}
+                </h1>
+                <h2 className="subtitle">
+                    {currentChannel.description}
+                </h2>
+            </div>
+            <div className="section-content">
+                <h3 className="section-title">Tin tức nổi bật</h3>
+                <section className="featured">
+                    <FeaturedArticleList articles={featuredArticleList}></FeaturedArticleList>
+                </section>
+
+                <h3 className="section-title">Danh sách các tin tức</h3>
+                <section className="list">
+                    <ArticleList articles={articleList}></ArticleList>
+                </section>
+            </div>
+        </div>
+    );
+
+
     // const [articles, setArticles] = useState<Article[]>([]);
     // const [loading, setLoading] = useState<boolean>(true);
-    //
+
     // useEffect(() => {
     //     articleService.getArticleByCategory('Xã hội')
     //         .then((data: any) => {
@@ -32,7 +62,7 @@ export default function HomePage() {
     //         </div>
     //     );
     // }
-    //
+
     // return (
     //     <div className="container my-4">
     //         <h2 className="mb-3 text-danger fw-bold">Tin nổi bật</h2>
@@ -42,9 +72,9 @@ export default function HomePage() {
     //         <ArticleList articles={articles} />
     //     </div>
     // );
-    return (
-        <div>
-            <h2>Trang Home </h2>
-        </div>
-    );
+    // return (
+    //     <div>
+    //         <h2>Trang Home </h2>
+    //     </div>
+    // );
 }

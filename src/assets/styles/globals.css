@@ -4,7 +4,7 @@
     --background-color: #ffffff;
     --border-color: #666666;
     --font-family: Arial;
-    --font-size: 15px;
+    --font-size: 18px;
 }
 
 body {
@@ -16,6 +16,7 @@ body {
 .header {
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
+
 }
 
 .header .header-top {
@@ -59,7 +60,9 @@ body {
 .header .navbar {
     width: 100%;
     height: 120px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -71,7 +74,11 @@ body {
     grid-auto-columns: 115px;
     grid-auto-flow: column;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
     padding: 10px 20px;
+    margin: 0 auto;
+    list-style: none;
 }
 
 .header .nav-item {
@@ -220,3 +227,96 @@ body {
     color: var(--primary-color);
 }
 
+
+.article-card {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.article-img {
+    width: 35%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-body {
+    width: 65%;
+}
+
+.article-title {
+    font-family:  var(--font-family), sans-serif;;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.article-date {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--border-color);
+}
+.article-description {
+    font-size: var(--font-size);
+    color: var(--text-color);
+}
+
+.article-img-sub {
+    width: 35%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.article-main {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.article-img-main {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.article-border {
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.section-top {
+    text-align: center;
+    padding: 25px 15px;
+    margin-bottom: 25px;
+}
+
+.title {
+    color: var(--primary-color);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}

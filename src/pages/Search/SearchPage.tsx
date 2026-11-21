@@ -69,6 +69,7 @@ export default function SearchPage() {
                             keyword={keyword}
                             onChangeKeyword={setKeyword}
                             onSubmit={handleSubmit}
+                            onQuickSearch={(kw) => setSearchParams({ q: kw })}
                         />
 
                         {!loading && queryParam && (

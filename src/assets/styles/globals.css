@@ -260,3 +260,122 @@ body {
     font-size: 14px;
     color: var(--border-color);
 }
+
+.article-detail {
+    max-width: 860px;
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+
+.article-detail-state {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--border-color);
+}
+
+.article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.article-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.article-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.article-breadcrumb-sep {
+    color: var(--border-color);
+}
+
+.article-detail-title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 16px;
+}
+
+/* Ghi đè .article-body của thẻ bài (width: 65%) khi nằm trong trang chi tiết */
+.article-detail .article-body {
+    width: 100%;
+    padding: 20px 0 0;
+}
+
+.article-detail .article-sapo {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.article-detail .article-figure {
+    margin: 0 0 24px;
+}
+
+.article-detail .article-figure img,
+.article-detail .article-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.article-detail .article-content,
+.article-detail .article-body > p:not(.article-sapo):not(.article-source) {
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+.article-detail .article-content p,
+.article-detail .article-body > p:not(.article-sapo):not(.article-source) {
+    margin-bottom: 18px;
+}
+
+.article-detail .article-content figure {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.article-detail .article-content figcaption {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--border-color);
+    margin-top: 8px;
+}
+
+.article-detail .article-content a {
+    color: var(--primary-color);
+}
+
+.article-detail .article-source {
+    margin-top: 24px;
+    font-size: 15px;
+    color: var(--border-color);
+}
+
+.article-detail .article-source a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .article-detail-title {
+        font-size: 26px;
+    }
+
+    .article-detail .article-sapo {
+        font-size: 18px;
+    }
+
+    .article-detail .article-content,
+    .article-detail .article-body > p:not(.article-sapo):not(.article-source) {
+        font-size: 17px;
+    }
+}

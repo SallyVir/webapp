@@ -14,7 +14,9 @@ export const articleService = {
     },
 
     async searchArticles(keyword: string): Promise<Article[]>{
-        const response = await axiosClient.get('/api/articles/search', {params: keyword});
-        return response.data.articles;
+        const response = await axiosClient.get('/api/articles/search', {
+            params: { keyword, q: keyword }
+        });
+        return response.data.articles || [];
     }
 }

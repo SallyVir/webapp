@@ -1,19 +1,46 @@
 import type { Article } from '../../types/article';
+import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../store/hooks.ts";
+import {setCurrentArticle} from "../../store/slices/articleSlice.ts";
 
 export default function MainArticleCard({ article }: { article: Article }) {
+    // return (
+    //     <div className="card h-100 shadow-sm">
+    //         <img
+    //             src={article.image}
+    //             className="card-img-top"
+    //             alt={article.title}
+    //         />
+    //         <div className="card-body d-flex flex-column">
+    //             <h3 className="card-title text-danger">{article.title}</h3>
+    //             <p className="card-text text-muted">{article.description}</p>
+    //             <a href={article.link} className="btn btn-danger mt-auto">
+    //                 Xem chi tiết
+    //             </a>
+    //         </div>
+    //     </div>
+    // );
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+
+    const handleArticleClick = () => {
+        dispatch(setCurrentArticle(article));
+        navigate(`/articles/${article.id}`);
+    };
+
     return (
-        <div className="card h-100 shadow-sm">
+        <div className="article-main" onClick={handleArticleClick}>
             <img
-                src={article.image}
-                className="card-img-top"
+                src={article.thumb || article.image}
+                className="article-img-main"
                 alt={article.title}
             />
             <div className="card-body d-flex flex-column">
-                <h3 className="card-title text-danger">{article.title}</h3>
-                <p className="card-text text-muted">{article.description}</p>
-                <a href={article.link} className="btn btn-danger mt-auto">
-                    Xem chi tiết
-                </a>
+                <h3 className="article-title">{article.title}</h3>
+                <p className="article-description">{article.description}</p>
+                {/*<a href={article.link} className="btn btn-danger mt-auto">*/}
+                {/*    Xem chi tiết*/}
+                {/*</a>*/}
             </div>
         </div>
     );

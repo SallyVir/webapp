@@ -8,9 +8,9 @@ export const articleService = {
         return response.data.articles;
     },
 
-    async getArticlesDetail(article_id: number): Promise<Article>{
+    async getArticlesDetail(article_id: number): Promise<Article> {
         const response = await axiosClient.get(`/api/articles/${article_id}`);
-        return response.data.articles;
+        return response.data.article;
     },
 
     async searchArticles(keyword: string): Promise<Article[]>{

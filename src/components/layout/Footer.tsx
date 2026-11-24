@@ -51,6 +51,7 @@ export default function Footer() {
                                     {parent.categoryName}
                                 </a>
 
+                                {childCategories.length > 0 && (
                                 <ul className="child-list">
                                     {childCategories.map((child: any) => (
                                         <li key={child.id} className="nav-item">
@@ -60,6 +61,7 @@ export default function Footer() {
                                         </li>
                                     ))}
                                 </ul>
+                                )}
                             </li>
                         );
                     })}

@@ -54,7 +54,7 @@ export default function Header() {
                                 <a className="nav-link" onClick={(e) => handleSetCurrent(e, parent)}>
                                     {parent.categoryName}
                                 </a>
-
+                                {childCategories.length > 0 && (
                                 <ul className="dropdown-menu">
                                     {childCategories.map((child: any) => (
                                         <li key={child.id} className="nav-item">
@@ -64,6 +64,7 @@ export default function Header() {
                                         </li>
                                     ))}
                                 </ul>
+                                )}
                             </li>
                         );
                     })}
